@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from digitalzoo.models import Animal, Habitat,Zookeeper,Carelog,Member,Activity
+from digitalzoo.models import Animal, Habitat,Zookeeper,Carelog,Member,Activity,Tourschedule
 from django.contrib.auth import get_user_model
 class AnimalSerializer(serializers.ModelSerializer):
      id = serializers.IntegerField(read_only=True)
@@ -36,6 +36,14 @@ class ActivitySerializer(serializers.ModelSerializer):
       class Meta:
            model = Activity
            fields = '__all__'
+
+class TourscheduleSerializer(serializers.ModelSerializer):
+      id = serializers.IntegerField(read_only=True)
+      class Meta:
+           model = Tourschedule
+           fields = '__all__'
+
+
 
 
 

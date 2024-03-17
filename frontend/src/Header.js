@@ -27,6 +27,7 @@ class NavApp extends React.Component {
                         },
                         { itemKey: 'user', text: 'Members', icon: <IconMember />,link:'members'},
                         { itemKey: 'user', text: 'Activities', icon: <IconBanner />,link:'activities'},
+                        { itemKey: 'user', text: 'Tour_schedules', icon: <IconNavigation />,link:'tour_schedules'},
                     ]}
                     onSelect={key => console.log(key)}
                     header={{
@@ -43,8 +44,8 @@ class NavApp extends React.Component {
                                 </Dropdown.Menu>
                             }
                         >
-                            <Avatar size="small" color='light-blue' style={{ margin: 4 }}>BD</Avatar>
-                            <span>Bytedancer</span>
+                            <Avatar size="small" color='light-blue' style={{ margin: 4 }}>VC</Avatar>
+                            <span>Vincent</span>
                         </Dropdown>
                     }
                 />

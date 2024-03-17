@@ -154,7 +154,7 @@ const ActivityComponent = () => {
             dataIndex: 'name',
             render: (text, record) => (
                 isEditing && editActivityId === record.id ? (
-                    <Input value={editActivityData.name} onChange={(e) => setEditActivityData({ ...editActivityData, name: e.target.value })} />
+                    <Input value={editActivityData.name} onChange={(e) => setEditActivityData({ ...editActivityData, name: e })} />
                 ) : (
                     text
                 )
@@ -165,7 +165,7 @@ const ActivityComponent = () => {
             dataIndex: 'description',
             render: (text, record) => (
                 isEditing && editActivityId === record.id ? (
-                    <Input value={editActivityData.description} onChange={(e) => setEditActivityData({ ...editActivityData, description: e.target.value })} />
+                    <Input value={editActivityData.description} onChange={(e) => setEditActivityData({ ...editActivityData, description: e })} />
                 ) : (
                     text
                 )
@@ -176,7 +176,7 @@ const ActivityComponent = () => {
             dataIndex: 'start_time',
             render: (text, record) => (
                 isEditing && editActivityId === record.id ? (
-                    <Input value={editActivityData.start_time} onChange={(e) => setEditActivityData({ ...editActivityData, start_time: e.target.value })} />
+                    <Input value={editActivityData.start_time} onChange={(e) => setEditActivityData({ ...editActivityData, start_time: e })} />
                 ) : (
                     text
                 )
@@ -187,7 +187,7 @@ const ActivityComponent = () => {
             dataIndex: 'end_time',
             render: (text, record) => (
                 isEditing && editActivityId === record.id ? (
-                    <Input value={editActivityData.end_time} onChange={(e) => setEditActivityData({ ...editActivityData, end_time: e.target.value })} />
+                    <Input value={editActivityData.end_time} onChange={(e) => setEditActivityData({ ...editActivityData, end_time: e })} />
                 ) : (
                     text
                 )

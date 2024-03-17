@@ -35,25 +35,6 @@ class Carelog(models.Model):
     def __str__(self):
         return self.animal.name
 
-class TourRoute(models.Model):
-    name = models.CharField(max_length=100, blank=False, default='')
-    start_time = models.DateTimeField(default=timezone.now)
-    duration = models.IntegerField(default=0)  # 游览路线总时长（分钟）
-    habitats = models.ManyToManyField(Habitat, through='TourRouteDetail')
-
-    def __str__(self):
-        return self.name
-
-class TourRouteDetail(models.Model):
-    tour_route = models.ForeignKey(TourRoute, on_delete=models.CASCADE)
-    habitat = models.ForeignKey(Habitat, on_delete=models.CASCADE)
-    position = models.IntegerField()
-
-    class Meta:
-        unique_together = ['tour_route', 'position']
-
-    def __str__(self):
-        return f"{self.tour_route} - {self.habitat} ({self.position})"
 
 
 class Member(models.Model):
@@ -87,6 +68,55 @@ class Activity(models.Model):
     def __str__(self):
         return self.name
 
+class Tourschedule(models.Model):
+     name = models.CharField(max_length=100,blank=False,default='')
+     start_time = models.DateTimeField()
+     end_time = models.DateTimeField()
+     description = models.CharField(max_length=1000,blank=False,default='')
+     habitat = models.ManyToManyField(Habitat,blank=True)
+     member = models.ManyToManyField(Member,blank=True)
+
+     def __str__(self):
+         return self.name
+
+     def check_habitat_status(self):
+         # 获取当前时间
+         current_time = timezone.now()
+
+         # 初始化栖息地状态为"空闲"
+         status = "avilable"
+         end_time_remaining = None
+
+         # 检查每个关联的栖息地
+         for habitat in self.habitat.all():
+             # 如果结束时间已过，则标记为"空闲"
+             if self.end_time < current_time:
+                 status = "available"
+                 break
+             # 如果当前时间在开始时间和结束时间之间，则标记为"繁忙"
+             elif self.start_time <= current_time <= self.end_time:
+                 status = "busy"
+                 end_time_remaining = self.end_time - current_time
+                 break
+
+         return {"status": status, "end_time_remaining": end_time_remaining}
+
+     def update_habitat_status(self):
+         # 获取当前时间
+         current_time = timezone.now()
+
+         # 更新栖息地状态
+         for habitat in self.habitat.all():
+             # 根据当前时间和结束时间更新栖息地状态
+             if self.end_time < current_time:
+                 habitat.status = "available"
+             elif self.start_time <= current_time <= self.end_time:
+                 habitat.status = "busy"
+             else:
+                 habitat.status = "available"
+
+             # 保存更新后的栖息地状态
+             habitat.save()
 
 @admin.register(Animal)
 class AnimalAdmin(admin.ModelAdmin):
@@ -117,6 +147,11 @@ class MemberAdmin(admin.ModelAdmin):
 class ActivityAdmin(admin.ModelAdmin):
     list_display = ('name','start_time','end_time','description')
     search_fields = ('name','start_time','end_time','description')
+
+@admin.register(Tourschedule)
+class TourscheduleAdmin(admin.ModelAdmin):
+     list_display = ('name','start_time','end_time','description')
+     search_fields = ('name','start_time','end_time','description')
 
 
 

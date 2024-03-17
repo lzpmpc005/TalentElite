@@ -8,6 +8,7 @@ const HabitatApi = {
         return axios.get(`${BASE_URL}habitats/`);
     },
 
+
     // 创建新栖息地
     createHabitat: (newHabitatData) => {
         return axios.post(`${BASE_URL}habitats/`, newHabitatData);

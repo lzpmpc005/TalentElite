@@ -8,7 +8,10 @@ import Member from "./components/Member";
 import MemberComponent from "./components/Member";
 import ActivityComponent from "./components/Activity";
 import ActivityParticipantComponent from "./components/AP";
+import tour_schedules from "./components/tour_schedules";
 import NavApp from './Header'
+import TourScheduleComponent from "./components/tour_schedules";
+import HabitatStatusComponent from "./components/HabitatStatusComponent";
 function App() {
     return (
         <Router>
@@ -23,7 +26,8 @@ function App() {
                     <Route path='/carelogs' element={<CarelogComponent/>}/>
                     <Route path='/members' element={<MemberComponent/>}/>
                     <Route path='/activities' element={<ActivityComponent/>}/>
-
+                    <Route path='/tour_schedules' element={<TourScheduleComponent/>}/>
+                    <Route path='/habitat_status' element={<HabitatStatusComponent/>}/>
                 </Routes>
 
             </div>

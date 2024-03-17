@@ -2,7 +2,7 @@ from django.urls import path, include
 from rest_framework import routers
 from digitalzoo.views import (AnimalViewSet, HabitatViewSet, ZookeeperViewSet,
                               CarelogViewSet, MemberViewSet,
-                              ActivityViewSet)
+                              ActivityViewSet,TourscheduleViewSet,tourschedule_habitat_status)
 from django.views.generic import TemplateView
 from django.contrib import admin
 
@@ -15,6 +15,7 @@ router.register(r'zookeepers', ZookeeperViewSet)
 router.register(r'carelogs', CarelogViewSet)
 router.register(r'members', MemberViewSet)
 router.register(r'activities', ActivityViewSet)
+router.register(r'tour_schedules', TourscheduleViewSet)
 
 
 
@@ -22,6 +23,7 @@ router.register(r'activities', ActivityViewSet)
 # API的URL模式
 api_urlpatterns = [
     path('', include(router.urls)),
+    path('tour_schedule_habitat_status/', tourschedule_habitat_status, name='tour_schedule_habitat_status'),
 ]
 
 # 其他URL模式（如admin等）

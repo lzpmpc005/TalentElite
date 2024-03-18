@@ -2,7 +2,7 @@ import React from 'react';
 import {Nav, Avatar, Dropdown, Button} from '@douyinfe/semi-ui';
 import {IconStar, IconUser, IconUserGroup, IconSetting, IconEdit, IconSemiLogo, IconMember} from '@douyinfe/semi-icons';
 import { IconTreeSelect, IconForm, IconBreadcrumb, IconBanner, IconBadge, IconNotification, IconSteps, IconTree, IconTabs, IconNavigation } from '@douyinfe/semi-icons-lab';
-import ActivityComponent from "./components/Activity";
+
 import {Link} from "react-router-dom";
 
 class NavApp extends React.Component {
@@ -35,25 +35,25 @@ class NavApp extends React.Component {
                         text: 'ZooConnect'
                     }}
                     footer={
-                        <div>
+<div>
 
-                            <Button size='large' type='danger' style={{marginRight: 8}}>
-                                <Link to='/homepage' style={{ textDecoration: 'none', color: 'inherit' }}>Logout</Link>
-                            </Button>
+    <Button size='large' style={{marginRight: 8}}>
+        <Link to='/animals' style={{ textDecoration: 'none', color: 'inherit' }}>Login</Link>
+    </Button>
 
-                            <Dropdown
-                                position="bottomRight"
-                                render={
-                                    <Dropdown.Menu>
-                                        <Dropdown.Item>详情</Dropdown.Item>
-                                        <Dropdown.Item>退出</Dropdown.Item>
-                                    </Dropdown.Menu>
-                                }
-                            >
-                                <Avatar size="small" color='light-blue' style={{ margin: 4 }}>VC</Avatar>
-                                <span>Vincent</span>
-                            </Dropdown>
-                        </div>}
+                        <Dropdown
+                            position="bottomRight"
+                            render={
+                                <Dropdown.Menu>
+                                    <Dropdown.Item>详情</Dropdown.Item>
+                                    <Dropdown.Item>退出</Dropdown.Item>
+                                </Dropdown.Menu>
+                            }
+                        >
+                            <Avatar size="small" color='light-blue' style={{ margin: 4 }}>VC</Avatar>
+                            <span>Vincent</span>
+                        </Dropdown>
+</div>}
                 />
             </div>
         );

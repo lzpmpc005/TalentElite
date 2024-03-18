@@ -30,6 +30,5 @@ api_urlpatterns = [
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(api_urlpatterns)),
-    path('', TemplateView.as_view(template_name='index.html'))
 
 ]

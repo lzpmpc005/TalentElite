@@ -3,6 +3,7 @@ import TourScheduleApi from "../api/tour_schedules";
 import HabitatApi from "../api/Habitat";
 import MemberApi from "../api/MemberApi";
 import {Modal,Table, Card, Space, Button, Input, TextArea, Select} from '@douyinfe/semi-ui';
+import NavApp from "../Header";
 import HabitatStatusComponent from "./HabitatStatusComponent";
 const TourScheduleComponent = () => {
     const [tourSchedules, setTourSchedules] = useState([]);
@@ -213,7 +214,7 @@ const TourScheduleComponent = () => {
 
     return (
         <div>
-
+<NavApp/>
             <div className='row row-cols-1 row-cols-md-2 g-lg-2  mt-5 ms-5 me-5  '
                  style={{width: '1400px', margin:'0 -1px', marginBottom: '20px'}}>
                 <Card title="Habitats Status">

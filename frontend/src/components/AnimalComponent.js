@@ -3,6 +3,7 @@ import '../bootstrap-5.3.3-dist/css/bootstrap.min.css'
 import AnimalApi from '../api/Animal';
 import HabitatApi from '../api/Habitat';
 import { Card, Space, Button, Typography,TextArea,Input ,Select,Text} from '@douyinfe/semi-ui';
+import NavApp from "../Header";
 const AnimalComponent = () => {
     const [animals, setAnimals] = useState([]);
     const [habitats, setHabitats] = useState([]);
@@ -84,6 +85,7 @@ const AnimalComponent = () => {
 
     return (
         <div>
+            <NavApp/>
             <div className='mt-5 ms-5'>
                 <Card
                     style={{width: '800px', marginBottom: '20px'}} // 调整卡片间距

@@ -3,6 +3,7 @@ import AnimalApi from '../api/Animal';
 import ZookeeperApi from '../api/Zookeeper';
 import CarelogApi from '../api/Carelog';
 import { Table,Card, Space, Button, Typography,TextArea,Input ,Select,Text} from '@douyinfe/semi-ui';
+import NavApp from "../Header";
 const CarelogComponent = () => {
     const [carelogs, setCarelogs] = useState([]);
     const [animals, setAnimals] = useState([]);
@@ -175,6 +176,7 @@ const CarelogComponent = () => {
 
     return (
         <div>
+            <NavApp/>
             <div className='mt-5 ms-5'>
                 <Card
                     style={{width: '800px', marginBottom: '20px'}} // 调整卡片间距

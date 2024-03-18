@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ZookeeperApi from '../api/Zookeeper';
 import {Card, Space, Button, Typography,TextArea,Input ,Select,Text} from "@douyinfe/semi-ui";
-
+import NavApp from "../Header";
 const ZookeeperComponent = () => {
     const [zookeepers, setZookeepers] = useState([]);
     const [newZookeeperData, setNewZookeeperData] = useState({ name: '', responsibility: '', qualification: '' ,image:''});
@@ -71,6 +71,7 @@ const ZookeeperComponent = () => {
 
     return (
         <div>
+            <NavApp/>
             <div className='mt-5 ms-5'>
                 <Card
                     style={{width: '800px', marginBottom: '20px'}} // 调整卡片间距

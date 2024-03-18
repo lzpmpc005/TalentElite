@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import MemberApi from '../api/MemberApi';
 import { Table, Avatar, Button, Select,Card } from '@douyinfe/semi-ui';
 import { IconMore } from '@douyinfe/semi-icons';
+import NavApp from "../Header";
 
 const MemberComponent = () => {
     const [members, setMembers] = useState([]);
@@ -164,6 +165,7 @@ const MemberComponent = () => {
 
     return (
         <div>
+            <NavApp/>
             <div className='mt-5 ms-5'>
                 <Card
                     style={{width: '800px', marginBottom: '20px'}} // 调整卡片间距

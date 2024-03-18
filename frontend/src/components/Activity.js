@@ -4,7 +4,7 @@ import AnimalApi from '../api/Animal';
 import MemberApi from '../api/MemberApi';
 import HabitatApi from '../api/Habitat';
 import { Card,Table, Button, Select, Input ,TextArea} from '@douyinfe/semi-ui';
-
+import NavApp from "../Header";
 const ActivityComponent = () => {
     const [activities, setActivities] = useState([]);
     const [newActivity, setNewActivity] = useState({
@@ -265,6 +265,7 @@ const ActivityComponent = () => {
 
     return (
         <div>
+            <NavApp/>
             <div className='mt-5 ms-5'>
                 <Card
                     style={{width: '800px', marginBottom: '20px'}} // 调整卡片间距

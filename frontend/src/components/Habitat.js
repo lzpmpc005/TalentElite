@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import HabitatApi from '../api/Habitat';
 import { Card, Space, Button, Typography,TextArea,Input ,Select,Text} from '@douyinfe/semi-ui';
+import NavApp from "../Header";
 const HabitatComponent = () => {
     const [habitats, setHabitats] = useState([]);
     const [newHabitatData, setNewHabitatData] = useState({ name: '', description: '', image: '' });
@@ -70,6 +71,7 @@ const HabitatComponent = () => {
 
     return (
         <div>
+        <NavApp/>
             <div className='mt-5 ms-5'>
                 <Card
                     style={{width: '800px', marginBottom: '20px'}} // 调整卡片间距

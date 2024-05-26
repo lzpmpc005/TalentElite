@@ -1,5 +1,5 @@
 # Enterprise Employee Management System
-
+Video introduction link:https://livelancsac-my.sharepoint.com/:v:/g/personal/chengy28_lancaster_ac_uk/EZsRxhNyWMhLtVJhubMi3AEByyvbBYFkcZnxhQpIu1Q5aQ
 ## Introduction
 
 This project is an enterprise employee management system that includes features such as login authentication, employee information management, log recording, email broadcasting, and database backup. It leverages multiple backend and frontend technologies to provide a comprehensive and user-friendly enterprise management solution.

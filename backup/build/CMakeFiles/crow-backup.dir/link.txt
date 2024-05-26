@@ -1,0 +1,1 @@
+/usr/bin/clang++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/lib "CMakeFiles/crow-backup.dir/main.cpp.o" "CMakeFiles/crow-backup.dir/BackupService.cpp.o" -o crow-backup   -L/usr/local/lib  -Wl,-rpath,/usr/local/lib -lpthread

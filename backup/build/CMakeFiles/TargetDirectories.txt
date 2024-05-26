@@ -1,0 +1,3 @@
+/Users/v/talentelite/backup/build/CMakeFiles/crow-backup.dir
+/Users/v/talentelite/backup/build/CMakeFiles/edit_cache.dir
+/Users/v/talentelite/backup/build/CMakeFiles/rebuild_cache.dir

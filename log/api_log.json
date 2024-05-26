@@ -1,0 +1,3 @@
+{"timestamp":"2024-05-23T02:26:09.875481+02:00","method":"GET","endpoint":"http://localhost:8000/api/employees/","status":200}
+{"timestamp":"2024-05-23T02:33:33.716519+02:00","method":"GET","endpoint":"/api/resource","status":200}
+{"timestamp":"2024-05-23T02:36:49.954323+02:00","method":"GET","endpoint":"/api/employees/","status":200}
